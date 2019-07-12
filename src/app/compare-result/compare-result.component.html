@@ -1,0 +1,19 @@
+<span
+  *ngIf="computeService.resDiff.length"
+>
+    <h4>{{'Разные:'}}</h4>
+    <li *ngFor="let eq3 of computeService.resDiff" >{{eq3}}</li>
+</span>
+<span
+  *ngIf="computeService.resEqual.length"
+>
+    <h4>{{'Одинаковые версии:'}}</h4>
+    <li *ngFor="let eq of computeService.resEqual" >{{eq}}</li>
+</span>
+<span
+  *ngIf="computeService.resNoIn.length"
+>
+    <h4>{{'Нет в другой:'}}</h4>
+    <li *ngFor="let eq2 of computeService.resNoIn" >{{eq2}}</li>
+</span>
+

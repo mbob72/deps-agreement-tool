@@ -1,0 +1,4 @@
+<button (click)="toggleShow()">{{ !show ? 'Показать' : 'Скрыть'}}</button>
+<table *ngIf="show">
+  <tr app-pack-show [pack]='pack' *ngFor="let pack of packs" [class.package_li]="true" ></tr>
+</table>

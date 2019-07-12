@@ -46,15 +46,15 @@ export class ComputeService {
 
     Object.keys(one).map(pack => {
       if (one[pack] === two[pack]) {
-        this.resEqual = this.resEqual.concat(`${pack} version ${one[pack]}`)
+        this.resEqual = this.resEqual.concat({ single: [pack, one[pack]]})
         return
       }
-      if(!two[pack]) {
-        this.resNoIn = this.resNoIn.concat(`${pack} version ${one[pack]}`)
+      if (!two[pack]) {
+        this.resNoIn = this.resNoIn.concat({ single: [pack, one[pack]]})
         return
       }
 
-      this.resDiff = this.resDiff.concat(`${pack} version ${one[pack]} / ${two[pack]}`)
+      this.resDiff = this.resDiff.concat({ double: [pack, one[pack], two[pack]] })
     })
 
     console.warn('new res::', this.resEqual, this.resNoIn, this.resDiff)

@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { DepInputComponent } from './dep-input/dep-input.component';
 import { OneAppDepsComponent } from './one-app-deps/one-app-deps.component';
 import { CompareResultComponent } from './compare-result/compare-result.component';
+import { PacksListComponent } from './packs-list/packs-list.component';
+import { PackShowComponent } from './pack-show/pack-show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DepInputComponent,
     OneAppDepsComponent,
-    CompareResultComponent
+    CompareResultComponent,
+    PacksListComponent,
+    PackShowComponent
   ],
   imports: [
     BrowserModule,

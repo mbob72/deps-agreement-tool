@@ -29,10 +29,10 @@ export class ComputeService {
   }
 
   setNewVal({ number, name, value }) {
-
+    console.warn('value::', value)
     this.dependecies[number] = {
       ...(this.dependecies[number] || {}),
-      [name]: JSON.parse(value)
+      [name]: value.trim() ? JSON.parse(value) : null
     }
 
     this.compute()

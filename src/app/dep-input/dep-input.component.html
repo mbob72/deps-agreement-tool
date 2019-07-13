@@ -1,3 +1,3 @@
 <p>Введите {{role}}:<br/>
-  <textarea [class.area]="true" [(ngModel)]="jsovVal" (input)="onValChange($event)"></textarea>
+  <textarea [class.area]="true" [(ngModel)]="jsonVal" #inputElem (input)="onValChange($event)"></textarea>
 </p>

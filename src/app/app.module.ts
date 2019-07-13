@@ -8,6 +8,7 @@ import { OneAppDepsComponent } from './one-app-deps/one-app-deps.component';
 import { CompareResultComponent } from './compare-result/compare-result.component';
 import { PacksListComponent } from './packs-list/packs-list.component';
 import { PackShowComponent } from './pack-show/pack-show.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PackShowComponent } from './pack-show/pack-show.component';
     OneAppDepsComponent,
     CompareResultComponent,
     PacksListComponent,
-    PackShowComponent
+    PackShowComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

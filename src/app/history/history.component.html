@@ -1,0 +1,8 @@
+<div  >
+  <label>Сохранить в историю с именем:</label>
+  <input [(ngModel)]="name"/>
+  <button (click)="saveCurrent()">Сохранить</button>
+  <ul *ngIf="history.length" >
+    <button *ngFor="let item of history" (click)="historyClick(item.data)">{{item.name}}</button>
+  </ul>
+</div>

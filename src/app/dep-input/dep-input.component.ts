@@ -1,21 +1,24 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit  } from '@angular/core';
 import { ComputeService } from '../compute.service';
+import { InputUpdateService } from '../input-update.service';
+
+import {ElementRef, ViewChild, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-dep-input',
   templateUrl: './dep-input.component.html',
   styleUrls: ['./dep-input.component.css']
 })
-export class DepInputComponent implements OnInit {
+export class DepInputComponent implements AfterViewInit {
   @Input()
-  role;
+  role
   @Input()
   name
 
-  @Output()
-  jsonEmit = new EventEmitter()
+  @ViewChild('inputElem')
+  el:ElementRef;
 
-  jsovVal;
+  jsonVal
 
   onValChange(event) {
     console.log('val changed::', event.target.value)
@@ -27,10 +30,13 @@ export class DepInputComponent implements OnInit {
   }
 
   constructor(
-    private computeService: ComputeService
+    private computeService: ComputeService,
+    private inputUpdateService: InputUpdateService,
+    private rd: Renderer2
   ) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    this.inputUpdateService.getInputs( this.name, this.role, this.el.nativeElement, this)
   }
 
 }

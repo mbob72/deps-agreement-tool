@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { StorageService } from '../storage.service';
 import { ComputeService } from '../compute.service'
 import { InputUpdateService } from '../input-update.service';
@@ -11,15 +11,15 @@ import { InputUpdateService } from '../input-update.service';
 export class HistoryComponent implements OnInit {
 
   name: string
-  history: any
+  get history() {
+    return this.storageService.get()
+  }
 
   constructor(
     private storageService: StorageService,
     private computeService: ComputeService,
     private inputUpdateService: InputUpdateService
   ) {
-    this.history = storageService.get()
-    console.warn('get history::', this.history)
   }
 
   saveCurrent() {
@@ -34,12 +34,13 @@ export class HistoryComponent implements OnInit {
   }
 
   historyClick(data) {
-    // console.warn('getting::', ind)
-    // const { data } = this.storageService.getByInd(ind)
     this.inputUpdateService.setVals(data)
+  }
+
+  clear() {
+    this.storageService.reset()
   }
 
   ngOnInit() {
   }
-
 }

@@ -15,8 +15,8 @@ export class DepInputComponent implements AfterViewInit {
   @Input()
   name
 
-  @ViewChild('inputElem')
-  el:ElementRef;
+  @ViewChild('inputElem', null)
+  el: ElementRef;
 
   jsonVal
 

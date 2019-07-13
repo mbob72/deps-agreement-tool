@@ -9,6 +9,7 @@ import { CompareResultComponent } from './compare-result/compare-result.componen
 import { PacksListComponent } from './packs-list/packs-list.component';
 import { PackShowComponent } from './pack-show/pack-show.component';
 import { HistoryComponent } from './history/history.component';
+import { GetFileComponent } from './get-file/get-file.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HistoryComponent } from './history/history.component';
     CompareResultComponent,
     PacksListComponent,
     PackShowComponent,
-    HistoryComponent
+    HistoryComponent,
+    GetFileComponent
   ],
   imports: [
     BrowserModule,

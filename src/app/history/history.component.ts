@@ -37,6 +37,10 @@ export class HistoryComponent implements OnInit {
     this.inputUpdateService.setVals(data)
   }
 
+  historyDel(data) {
+    this.storageService.delete(data)
+  }
+
   clear() {
     this.storageService.reset()
   }

@@ -32,7 +32,7 @@ export class ComputeService {
     console.warn('value::', value)
     this.dependecies[number] = {
       ...(this.dependecies[number] || {}),
-      [name]: value.trim() ? JSON.parse(value) : null
+      [name]: value && value.trim() ? JSON.parse(value) : null
     }
 
     this.compute()

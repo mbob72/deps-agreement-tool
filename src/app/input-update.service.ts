@@ -31,10 +31,10 @@ export class InputUpdateService {
       this.inputs.two.devDependencies
     ]
     const datas = [
-      data.one.dependencies ? JSON.stringify(data.one.dependencies) : '',
-      data.one.devDependencies ? JSON.stringify(data.one.devDependencies) : '',
-      data.two.dependencies ? JSON.stringify(data.two.dependencies) : '',
-      data.two.devDependencies ? JSON.stringify(data.two.devDependencies) : ''
+      data.one.dependencies ? JSON.stringify(data.one.dependencies, null, '\n') : '',
+      data.one.devDependencies ? JSON.stringify(data.one.devDependencies, null, '\n') : '',
+      data.two.dependencies ? JSON.stringify(data.two.dependencies, null, '\n') : '',
+      data.two.devDependencies ? JSON.stringify(data.two.devDependencies, null, '\n') : ''
     ]
     pointers.map((pointer, ind) => {
       pointer.el.value = datas[ind]

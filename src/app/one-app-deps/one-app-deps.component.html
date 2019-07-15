@@ -1,5 +1,6 @@
 <span [class.header]="true" >
   <h3>{{title}}</h3>
-  <app-dep-input [name]="name" [role]="firstRole" ></app-dep-input>
-  <app-dep-input [name]="name" [role]="secondRole" ></app-dep-input>
+  <app-get-file (getFile)="getFile($event)" ></app-get-file>
+  <app-dep-input [name]="name" [role]="firstRole" [jsonVal]="devDependencies" ></app-dep-input>
+  <app-dep-input [name]="name" [role]="secondRole" [jsonVal]="dependencies" ></app-dep-input>
 </span>

@@ -14,11 +14,19 @@ export class DepInputComponent implements AfterViewInit {
   role
   @Input()
   name
+  @Input()
+  set jsonVal(value) {
+    this._jsonVal = value
+    this.onValChange({target: { value }});
+  }
+
+  get jsonVal() {
+    return this._jsonVal
+  }
+  private _jsonVal
 
   @ViewChild('inputElem', null)
   el: ElementRef;
-
-  jsonVal
 
   onValChange(event) {
     console.log('val changed::', event.target.value)

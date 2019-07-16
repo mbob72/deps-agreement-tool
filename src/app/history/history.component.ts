@@ -34,11 +34,12 @@ export class HistoryComponent implements OnInit {
   }
 
   historyClick(data) {
+    console.warn('appl::', data)
     this.inputUpdateService.setVals(data)
   }
 
-  historyDel(data) {
-    this.storageService.delete(data)
+  historyDel(ind) {
+    this.storageService.delete(ind)
   }
 
   clear() {

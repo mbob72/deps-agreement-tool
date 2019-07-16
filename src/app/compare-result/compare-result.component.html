@@ -1,19 +1,19 @@
-<span
+<div
   *ngIf="computeService.resDiff.length"
 >
     <h4>Пакеты, версии которых разнятся, всего {{computeService.resDiff.length}} пакетов:</h4>
     <app-packs-list [packs]="computeService.resDiff" ></app-packs-list>
-</span>
-<span
+</div>
+<div
   *ngIf="computeService.resEqual.length"
 >
     <h4>Пакеты с совпадающими версиями версии, всего {{computeService.resEqual.length}} пакетов: </h4>
     <app-packs-list [packs]="computeService.resEqual" ></app-packs-list>
-</span>
-<span
+</div>
+<div
   *ngIf="computeService.resNoIn.length"
 >
     <h4>Пакеты, которые есть в первом, нет во втором, всего {{computeService.resNoIn.length}} пакетов:</h4>
     <app-packs-list [packs]="computeService.resNoIn" ></app-packs-list>
-</span>
+</div>
 

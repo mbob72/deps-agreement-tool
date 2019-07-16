@@ -23,22 +23,21 @@ export class InputUpdateService {
   }
 
   setVals(data) {
-    console.warn('before pass to input, data::', data)
     const pointers = [
       this.inputs.one.dependencies,
       this.inputs.one.devDependencies,
       this.inputs.two.dependencies,
       this.inputs.two.devDependencies
     ]
+    const helper = data => data ? JSON.stringify(data, null, '\n') : ''
     const datas = [
-      data.one.dependencies ? JSON.stringify(data.one.dependencies, null, '\n') : '',
-      data.one.devDependencies ? JSON.stringify(data.one.devDependencies, null, '\n') : '',
-      data.two.dependencies ? JSON.stringify(data.two.dependencies, null, '\n') : '',
-      data.two.devDependencies ? JSON.stringify(data.two.devDependencies, null, '\n') : ''
+      helper(data.one.dependencies),
+      helper(data.one.devDependencies),
+      helper(data.two.dependencies),
+      helper(data.two.devDependencies),
     ]
     pointers.map((pointer, ind) => {
-      pointer.el.value = datas[ind]
-      pointer.instance.onValChange({ target: { value: datas[ind] } } )
-    } )
+      pointer.instance.jsonVal = datas[ind]
+    })
   }
 }

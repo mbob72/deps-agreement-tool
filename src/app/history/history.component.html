@@ -5,9 +5,9 @@
   <br/>
   <button (click)="clear()">Очистить историю</button>
   <ul *ngIf="history.length" >
-    <ng-container *ngFor="let item of history" >
+    <ng-container *ngFor="let item of history; index as ind" >
       <button (click)="historyClick(item.data)">{{item.name}}</button>
-      <button (click)="historyDel(item.data)" >Удалить</button>
+      <button (click)="historyDel(ind)" >Удалить</button>
     </ng-container>
   </ul>
 </div>

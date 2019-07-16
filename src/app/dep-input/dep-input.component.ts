@@ -17,7 +17,7 @@ export class DepInputComponent implements AfterViewInit {
   @Input()
   set jsonVal(value) {
     this._jsonVal = value
-    this.onValChange({target: { value }});
+    setTimeout( () => this.onValChange({target: { value }}), 0);
   }
 
   get jsonVal() {
@@ -29,7 +29,6 @@ export class DepInputComponent implements AfterViewInit {
   el: ElementRef;
 
   onValChange(event) {
-    console.log('val changed::', event.target.value)
     this.computeService.setNewVal({
       number: this.name,
       name: this.role,

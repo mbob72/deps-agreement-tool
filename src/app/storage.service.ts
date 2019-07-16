@@ -24,9 +24,10 @@ export class StorageService {
     return this.history[ind]
   }
 
-  delete({ ind }) {
+  delete(ind) {
     const current = this.get()
-    this.set(current.splice(ind, 1))
+    current.splice(ind, 1)
+    this.set(current)
   }
 
   add({ name, data }) {

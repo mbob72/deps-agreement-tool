@@ -22,8 +22,8 @@ export class OneAppDepsComponent implements OnInit {
 
   getFile(event) {
     const { dependencies, devDependencies } = JSON.parse(event)
-    this.dependencies = JSON.stringify(dependencies, null, '\n')
-    this.devDependencies = JSON.stringify(devDependencies, null, '\n')
+    this.dependencies = JSON.stringify(dependencies, null, '\t')
+    this.devDependencies = JSON.stringify(devDependencies, null, '\t')
   }
   ngOnInit() {
   }

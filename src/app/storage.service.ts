@@ -41,7 +41,7 @@ export class StorageService {
 
   set(data: any): void {
     try {
-      localStorage.setItem(this.nameSpace, JSON.stringify(data, null, '\n'));
+      localStorage.setItem(this.nameSpace, JSON.stringify(data, null, '\t'));
       this.history = data
     } catch (e) {
       console.error('Error saving to localStorage', e);

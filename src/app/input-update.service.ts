@@ -29,7 +29,7 @@ export class InputUpdateService {
       this.inputs.two.dependencies,
       this.inputs.two.devDependencies
     ]
-    const helper = data => data ? JSON.stringify(data, null, '\n') : ''
+    const helper = data => data ? JSON.stringify(data, null, '\t') : ''
     const datas = [
       helper(data.one.dependencies),
       helper(data.one.devDependencies),
